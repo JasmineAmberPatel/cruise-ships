@@ -1,5 +1,10 @@
 {
-  "extends": "mcr-codes"
+  "extends": [
+     "mcr-codes"
+],
+"env": {
+  "jest": true
+}
 }
 
 
