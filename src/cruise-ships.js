@@ -1,6 +1,6 @@
-function CruiseShip(name) {
-  this.name = name; 
-  this.port = startingPort;
+function CruiseShip(name, startingPort) {
+  this.name = name;
+  this.startingPort = startingPort;
 }
 
 

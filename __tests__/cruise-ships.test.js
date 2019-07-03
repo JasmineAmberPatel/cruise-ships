@@ -5,7 +5,7 @@ describe('constructor', () => {
     expect(new CruiseShip()).toBeInstanceOf(Object);
   });
   it('sets the starting port property', () => {
-    const cruiseShip = new CruiseShip('Dover');
-    expect(cruiseShip.startingPort).toEqual('Dover');
+    const cruiseShip = new CruiseShip('Edward', 'Dover');
+    expect(cruiseShip.startingPort).toBe('Dover');
   });
 });
