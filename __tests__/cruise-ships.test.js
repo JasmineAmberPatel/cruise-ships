@@ -1,11 +1,11 @@
-const CruiseShip = require('../src/cruise-ships.js');
+const CruiseShip = require('../src/cruise-ships');
 
 describe('constructor', () => {
   it('returns an object', () => {
-    CruiseShip();
-    expect(new CruiseShip()).toEqual(Object);
+    expect(new CruiseShip()).toBeInstanceOf(Object);
   });
   it('sets the starting port property', () => {
-    expect(CruiseShip.startingPort).toEqual('');
+    const cruiseShip = new CruiseShip('Dover');
+    expect(cruiseShip.startingPort).toEqual('Dover');
   });
 });
