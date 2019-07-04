@@ -3,5 +3,11 @@ function CruiseShip(name, startingPort) {
   this.startingPort = startingPort;
 }
 
+CruiseShip.prototype = {
+  setSail: function () {
+    return this.startingPort = false;
+  },
+
+};
 
 module.exports = CruiseShip;
