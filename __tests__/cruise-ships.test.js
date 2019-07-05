@@ -1,20 +1,28 @@
 const CruiseShip = require('../src/cruise-ships');
+const Port = require('../src/Port.js');
 
 describe('constructor', () => {
   it('returns an object', () => {
     expect(new CruiseShip()).toBeInstanceOf(Object);
   });
   it('sets the starting port property', () => {
-    const cruiseShip = new CruiseShip('jest', 'Dover');
-    expect(cruiseShip.startingPort).toBe('Dover');
+    const port = new CruiseShip('jest', Port);
+    expect(port.currentPort).toBe(Port);
   });
   it('lets the ship set sail', () => {
-    const cruiseShip = new CruiseShip('jest', 'Dover');
-    cruiseShip.setSail();
-    expect(cruiseShip.startingPort).toBeFalsy();
+    const port = new CruiseShip('jest', Port);
+    port.setSail();
+    expect(port.currentPort).toBeFalsy();
   });
   it('checks the ship is in port', () => {
-    const cruiseShip = new CruiseShip('jest', 'Dover');
-    expect(cruiseShip.startingPort).toBeTruthy();
+    const port = new CruiseShip('jest', Port);
+    expect(port.currentPort).toBeTruthy();
+  });
+  it('can dock at a different port', () => {
+    const dover = new Port('Dover');
+    const ship = new CruiseShip(dover);
+    const calais = new Port('Calais');
+    ship.dock(calais);
+    expect(ship.currentPort).toBe(calais);
   });
 });
