@@ -5,9 +5,9 @@ function CruiseShip(name, currentPort) {
 
 CruiseShip.prototype = {
   setSail: function () {
-    return this.currentPort = false;
+    this.currentPort = false;
   },
-  dock(port) {
+  dock: function (port) {
     this.currentPort = port;
   },
 };

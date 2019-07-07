@@ -1,12 +1,15 @@
 function Port(name) {
   this.name = name;
+  this.ships = [];
 }
 
 Port.prototype = {
-  setSail: function () {
-    return this.currentPort = false;
+  addShip: function (ship) {
+    this.ships.push(ship);
   },
-  dock: function () {
+  removeShip: function (ship) {
+    const shipToRemove = this.ships.indexOf(ship);
+    this.ships.splice(shipToRemove, 1);
   },
 };
 
