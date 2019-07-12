@@ -4,10 +4,10 @@ function Port(name) {
 }
 
 Port.prototype = {
-  addShip: function (ship) {
+  addShip: function addShip(ship) {
     this.ships.push(ship);
   },
-  removeShip: function (ship) {
+  removeShip: function removeShip(ship) {
     const shipToRemove = this.ships.indexOf(ship);
     this.ships.splice(shipToRemove, 1);
   },
