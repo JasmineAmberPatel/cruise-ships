@@ -13,13 +13,13 @@ describe('Port object', () => {
       expect(port.name).toEqual('Portchester');
     });
     it('Adds a ship to the ships array', () => {
-      const ship = {};
+      const ship = jest.fn();
       port.addShip(ship);
       expect(port.ships).toContain(ship);
     });
     it('Removes a ship from the ships array', () => {
-      const titanic = {};
-      const queenMary = {};
+      const titanic = jest.fn();
+      const queenMary = jest.fn();
       port.addShip(titanic);
       port.addShip(queenMary);
       port.removeShip(queenMary);
