@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1563184236428" clover="3.2.0">
+  <project timestamp="1563184236428" name="All files">
+    <metrics statements="21" coveredstatements="21" conditionals="0" coveredconditionals="0" methods="7" coveredmethods="7" elements="28" coveredelements="28" complexity="0" loc="21" ncloc="21" packages="1" files="3" classes="3"/>
+    <file name="cruise-ships.js" path="/Users/jasmineamber/cruise-ships/src/cruise-ships.js">
+      <metrics statements="12" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="2" count="7" type="stmt"/>
+      <line num="3" count="7" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="5" count="7" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="12" count="2" type="stmt"/>
+      <line num="15" count="2" type="stmt"/>
+      <line num="16" count="2" type="stmt"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+    </file>
+    <file name="itinerary.js" path="/Users/jasmineamber/cruise-ships/src/itinerary.js">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="2" count="7" type="stmt"/>
+      <line num="5" count="2" type="stmt"/>
+    </file>
+    <file name="port.js" path="/Users/jasmineamber/cruise-ships/src/port.js">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+      <line num="2" count="5" type="stmt"/>
+      <line num="3" count="5" type="stmt"/>
+      <line num="6" count="3" type="stmt"/>
+      <line num="8" count="3" type="stmt"/>
+      <line num="11" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+    </file>
+  </project>
+</coverage>

@@ -8,8 +8,20 @@ describe('CruiseShip object', () => {
   let calais;
   let itinerary;
   beforeEach(() => {
-    dover = new Port('Dover');
-    calais = new Port('Calais');
+    const port = {
+      removeShip: jest.fn(),
+      addShip: jest.fn(),
+    };
+    dover = {
+      ...port,
+      name: 'Dover',
+      ships: [],
+    };
+    calais = {
+      ...port,
+      name: 'Calais',
+      ships: [],
+    };
     itinerary = new Itinerary([dover, calais]);
     ship = new CruiseShip(itinerary);
   });
@@ -23,6 +35,7 @@ describe('CruiseShip object', () => {
     it('lets the ship set sail', () => {
       ship.setSail();
       expect(ship.currentPort).toBeFalsy();
+      expect(dover.removeShip).toHaveBeenCalledWith(ship);
     });
     it('checks the ship is in port', () => {
       ship.dock();
@@ -34,7 +47,7 @@ describe('CruiseShip object', () => {
       expect(ship.currentPort).toBe(calais);
     });
     it('gets added to port on instantiation', () => {
-      expect(dover.ships).toContain(ship);
+      expect(dover.addShip).toHaveBeenCalledWith(ship);
     });
   });
 });
