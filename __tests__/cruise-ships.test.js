@@ -22,7 +22,9 @@ describe('CruiseShip object', () => {
       name: 'Calais',
       ships: [],
     };
-    itinerary = new Itinerary([dover, calais]);
+    itinerary = {
+      ports: [dover, calais],
+    };
     ship = new CruiseShip(itinerary);
   });
   describe('constructor', () => {
@@ -45,6 +47,7 @@ describe('CruiseShip object', () => {
       ship.setSail();
       ship.dock();
       expect(ship.currentPort).toBe(calais);
+      expect(ship.previousPort).toBe(dover);
     });
     it('gets added to port on instantiation', () => {
       expect(dover.addShip).toHaveBeenCalledWith(ship);
