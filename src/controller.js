@@ -26,9 +26,16 @@
         portsElement.appendChild(newPortElement); 
         const portsElementWidth = parseInt(portsElement.style.width, 10);
         portsElement.style.width = `${portsElementWidth + 256}px`;   
-      })
+      });
     },
-  }
+    renderShip: function (ship) {
+      const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+      const portElement = document.querySelector(`[data-port-index=' ${currentPortIndex}']`)
+      const shipElement = document.querySelector('#ship');
+      shipElement.style.top = `${portElement.offsetTop + 32}px`;
+      shipElement.style.left = `${portElement.offsetLeft - 32}px`;
+    },
+  };
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = Controller;
   } else {
