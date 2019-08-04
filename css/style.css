@@ -30,10 +30,6 @@ body {
     background-image: url('../images/port.png');
 }
 
-portElement {
-    width: 0px;
-}
-
 #ship {
     width: 128px;
     height: 64px;
@@ -41,3 +37,22 @@ portElement {
     background-image: url('../images/ship.png');
 }
 
+#sailbutton {
+    width: 100%;
+    background-color: #fb3640;
+    font-family: 'Blinker', sans-serif;
+    border: 0;
+    border-bottom: 4px solid #d8040f;
+    color: white;
+    font-family: inherit;
+    padding: 10 px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#sailbutton:focus {
+    background-color: #d8040f;
+    border-bottom-width: 0;
+    padding-top: 14px;
+}
