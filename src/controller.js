@@ -48,15 +48,27 @@
       const shipElement = document.querySelector('#ship');
       const sailInterval = setInterval(() => {
         const shipLeft = parseInt(shipElement.style.left, 10);
-        if (shipLeft === (nextPortElement.offsetLeft -32)) {
+        if (shipLeft === (nextPortElement.offsetLeft - 32)) {
           ship.dock();
           clearInterval(sailInterval);
-        }
+          this.renderMessage(`Now docking ${ship.currentPort.name}`);
+        };
         shipElement.style.left = `${shipLeft + 1}px`;
       }, 20);
       if (!nextPortElement) {
-        return alert('End of the line Matey!');
+        this.renderMessage(`End of the line Matey! ${ship.currentPort.name} is the last stop`);
       };
+      this.renderMessage(`Now departing ${ship.currentPort.name}`);
+    },
+    renderMessage: function (message) {
+      const messageElement = document.createElement('div');
+      messageElement.id = 'message';
+      messageElement.innerHTML = message;
+      const viewport = document.querySelector('#viewport');
+      viewport.appendChild(messageElement);
+      setTimeout(() => {
+        viewport.removeChild(messageElement);
+      }, 2600);
     },
   };
   if (typeof module !== 'undefined' && module.exports) {
