@@ -44,12 +44,13 @@
       const ship = this.ship;
       const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
       const nextPortIndex = (currentPortIndex + 1);
+      console.log(ship.currentPort);
       const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
       console.log(nextPortElement);
       const shipElement = document.querySelector('#ship');
       const sailInterval = setInterval(() => {
         const shipLeft = parseInt(shipElement.style.left, 10);
-        if (shipLeft === (nextPortElement.offsetLeft - 32)) {
+        if ((ship.currentPort.name === 'Amber Cove') || (ship.currentPort.name === 'San Juan') || (ship.currentPort.name === 'Grand Turk') || (ship.currentPort.name === 'New York City')) {
           ship.dock();
           clearInterval(sailInterval);
           this.renderMessage(`Now docking ${ship.currentPort.name}`);
